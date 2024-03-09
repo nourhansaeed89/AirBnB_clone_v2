@@ -35,5 +35,3 @@ sed -i "/^\s*server_name\s*localhost;/a $config_block" /etc/nginx/sites-availabl
 
 # Restart Nginx
 service nginx restart
-
-exit 0
