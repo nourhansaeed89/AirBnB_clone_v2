@@ -27,11 +27,14 @@ chown -R ubuntu:ubuntu /data/
 
 # Update Nginx configuration
 config_block="
-    location /hbnb_static {
+    location /hbnb_static/ {
         alias /data/web_static/current/;
+        index index.html;
     }
 "
 sed -i "/^\s*server_name\s*localhost;/a $config_block" /etc/nginx/sites-available/default
 
 # Restart Nginx
 service nginx restart
+
+exit 0
